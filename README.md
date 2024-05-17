@@ -1,2 +1,17 @@
 # parsed-examples
-A repository with examples of various parsing, ranging from URLs to extracting data from html, cvv, txt, db etc
+
+### URL parsed
+```
+function parseProtocol(url) {
+  const parsedURL = /^(\w+):\/\/([^/]+)\/(.*)$/.exec(url);
+  if (!parsedURL) {
+    return false;
+  }
+  console.log(parsedURL);
+
+  const [, protocol, fullhost, fullpath] = parsedURL;
+  return protocol;
+}
+
+console.log(parseProtocol("https://github.com/cursedarthas"));
+```
